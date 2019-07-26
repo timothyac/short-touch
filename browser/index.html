@@ -8,14 +8,26 @@
     <title>Short Touch</title>
 </head>
 <body>
-    <form>
-        <h2>New Button</h2>
-        <label for="btn-name">Name</label>
-        <input type="text" name="btn-name" id="btn-name">
-        <label for="btn-action">Action</label>
-        <input type="text" name="btn-action" id="btn-action">
-        <button id="create">Create</button>
-    </form>
+    
+    <div class="program-grid">
+        <div class="existing">
+
+        </div>
+        <div class="create">
+            <ul class="tab-container">
+                <li><button class="tab-create">Create</button></li>
+                <li><button class="tab-edit">Edit</button></li>
+            </ul>
+            <form>
+                <h2>New Button</h2>
+                <label for="btn-name">Name</label>
+                <input type="text" name="btn-name" id="btn-name">
+                <label for="btn-action">Action</label>
+                <input type="text" name="btn-action" id="btn-action">
+                <button id="create">Create</button>
+            </form>
+        </div>
+    </div>
     <script src="./browser.js"></script>
 </body>
 </html>

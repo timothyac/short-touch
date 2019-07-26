@@ -43,8 +43,8 @@ ipcMain.on('create-new-button', (e, newButtonObject) => {
 
 function createWindow() {
     let win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 700,
+        height: 500,
         webPreferences: {
             nodeIntegration: true,
         },
