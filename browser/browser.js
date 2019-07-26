@@ -11,5 +11,12 @@ createButton.addEventListener('click', (e) => {
         name: nameInput.value,
         action: actionInput.value
     }
-ipcRenderer.send('create-new-button', (e, newTouchButton))
+
+    const buttons = [newTouchButton]
+
+    localStorage.setItem("buttons", JSON.stringify(buttons))
+
+    
+
+    ipcRenderer.send('create-new-button', (e, newTouchButton))
 })

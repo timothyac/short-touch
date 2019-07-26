@@ -71,6 +71,26 @@ button:focus {
     width: 160px
 }
 
+.button-item {
+    display: flex;
+    background: grey;
+    height: 37px;
+    width: 100%
+}
+
+.button-item p {
+    margin: 8px 7px 0 7px
+}
+
+.circle {
+    height: 25px;
+    width: 25px;
+    background: #7851a9;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+}
+
 .create {
     border: 1px solid grey;
     border-radius: 3px;
