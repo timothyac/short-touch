@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     background: #413C37;
     color: white;
 	font-family:
@@ -78,15 +79,19 @@ button:focus {
 /* traffic lights */
 
 .title-bar {
+    background: rgb(69,65,60);
+    background: linear-gradient(0deg, rgba(69,65,60,1) 0%, rgba(83,78,72,1) 100%);
+    border-bottom: 1px solid black;
     color: white;
-    height: 10px;
+    height: 40px;
     -webkit-app-region: drag;
 }
 
 .title-bar p {
     text-align: center;
     font-size: 14px;
-    margin: 0 0 0 250px ;
+    margin: 0 0 0 260px ;
+    padding-top: 10px;
     width: 175px;
     -webkit-user-select: none; 
 }
@@ -94,7 +99,7 @@ button:focus {
 /* app */
 
 .program-grid {
-    margin: 30px 10px;
+    margin: 30px 15px;
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-gap: 5px
