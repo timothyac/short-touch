@@ -224,3 +224,7 @@ deleteButton.addEventListener('click', (e) => {
     setList();
     switchToCreatePage();
 })
+
+ipcRenderer.on('create-new-buttons', (e) => {
+    console.log("Create a ntadsf")
+})

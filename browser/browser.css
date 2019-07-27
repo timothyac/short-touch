@@ -50,7 +50,7 @@ input[type="color"] {
 
 button {
     background: #767573;
-    max-width: 150px;
+    width: 72px;
     border: none;
     border-radius: 3px;
     padding: 2px 15px;
