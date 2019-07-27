@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    background: #413C37;
-    color: white;
+    background: #474747;
+    color: #DFDFDF;
 	font-family:
 		-apple-system,
 		BlinkMacSystemFont,
@@ -25,20 +25,23 @@ label{
 
 input {
     margin: 5px 0;
-    background: #767573;
-    border: 2px solid #767573;
+    background: #7A7A7A;
+    border: 2px solid #7A7A7A;
     border-radius: 3px;
     height: 14px;
     max-width: 300px;
-    color: white;
+    color: #DFDFDF;
 
 }
 
 input:focus {
     outline:0;
-    color: white;
-    font-weight: 500
+    color: #DFDFDF;
+    font-weight: 500;
+
 }
+
+
 
 input[type="color"] {
     padding: 10px;
@@ -49,13 +52,13 @@ input[type="color"] {
 }
 
 button {
-    background: #767573;
+    background: #7A7A7A;
     width: 72px;
     border: none;
     border-radius: 3px;
     padding: 2px 15px;
     box-shadow: none;
-    color: white;
+    color: #DFDFDF;
     cursor: pointer;
     font-size: 13px;
     font-weight: 500
@@ -63,6 +66,11 @@ button {
 
 button:focus {
     outline:0;
+}
+
+button:active {
+    background: rgb(52,88,255) !important;
+    background: linear-gradient(0deg, rgba(52,88,255,1) 29%, rgba(52,116,255,1) 100%) !important;
 }
 
 /* utility */
@@ -79,10 +87,10 @@ button:focus {
 /* traffic lights */
 
 .title-bar {
-    background: rgb(69,65,60);
-    background: linear-gradient(0deg, rgba(69,65,60,1) 0%, rgba(83,78,72,1) 100%);
+    background: rgb(73,73,73);
+    background: linear-gradient(0deg, rgba(73,73,73,1) 0%, rgba(88,88,89,1) 100%);
     border-bottom: 1px solid black;
-    color: white;
+    color: #DFDFDF;
     height: 40px;
     -webkit-app-region: drag;
 }
@@ -110,7 +118,7 @@ button:focus {
 .existing {
     border: 1px solid grey;
     border-radius: 3px;
-    background: #2F2A25;
+    background: #353535;
     height: 360px;
     width: 160px
 }
@@ -147,7 +155,7 @@ button:focus {
 .create {
     border: .5px solid rgb(104, 104, 104);
     border-radius: 3px;
-    background: #47423D;
+    background: #4D4D4D;
     height: 360px
 }
 

@@ -5,7 +5,7 @@
 Short Touch allows you to have 6 short cuts that are somewhat easily accessible at the click of a button.
 
 <a href="https://github.com/SunstroUS/short-touch/releases">
-	<img src="https://i.imgur.com/xtkhyiv.png" width="846">
+	<img src="https://i.imgur.com/nyvnoy2.png" width="846">
 </a>
 
 <a href="https://github.com/SunstroUS/short-touch/releases">
