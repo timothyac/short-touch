@@ -98,7 +98,6 @@ button:focus {
 .circle {
     height: 25px;
     width: 25px;
-    background: #7851a9;
     border-radius: 50%;
     display: inline-block;
     margin: 5px;
