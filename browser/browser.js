@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, shell } = require('electron');
 
 const createButton = document.getElementById('create');
 const updateButton = document.getElementById('update');
@@ -118,6 +118,7 @@ createButton.addEventListener('click', (e) => {
     const notFull = isStorageFull()
 
     if(!notFull) {
+        shell.beep()
         return alert("Can't have more than 6 buttons!")
     }
 
@@ -156,7 +157,9 @@ editTab.addEventListener('click', () => {
     if(element) {
         switchToEditPage(element);
         element.classList.add('active');
-    };
+    } else {
+        shell.beep();
+    }
 })
 
 // listen for a click on the update button
