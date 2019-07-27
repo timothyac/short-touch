@@ -42,7 +42,7 @@ input[type="color"] {
     width: 200px;
     height: 30px;
     cursor: pointer;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 button {
@@ -62,6 +62,11 @@ button:focus {
     outline:0;
     background: rgb(52,88,255);
     background: linear-gradient(0deg, rgba(52,88,255,1) 29%, rgba(52,116,255,1) 100%);
+}
+
+.active {
+    background: rgb(52,88,255) !important;
+    background: linear-gradient(0deg, rgba(52,88,255,1) 29%, rgba(52,116,255,1) 100%) !important;
 }
 
 .program-grid {
