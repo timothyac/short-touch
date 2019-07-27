@@ -3,13 +3,15 @@ const { ipcRenderer } = require('electron')
 const createButton = document.getElementById('create')
 const nameInput = document.getElementById('btn-name')
 const actionInput = document.getElementById('btn-action')
+const colorPicker = document.getElementById('color-picker')
 
 createButton.addEventListener('click', (e) => {
     e.preventDefault()
     console.log('clicked')
     const newTouchButton = {
         name: nameInput.value,
-        action: actionInput.value
+        action: actionInput.value,
+        color: colorPicker.value
     }
 
     const buttons = [newTouchButton]

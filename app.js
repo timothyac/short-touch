@@ -8,12 +8,12 @@ const touchItems = [welcomeLabel]
 function createNewButton(newButtonObject){
 
     // Destructure the incoming object
-    const { name, action } = newButtonObject
+    const { name, action, color } = newButtonObject
 
     // Create a new touch bar button
     const touchbtn = new TouchBarButton({
         label: name,
-        backgroundColor: '#7851a9',
+        backgroundColor: color,
         click: () => {
             // Use the shell to open links in the user browser
             shell.openExternal(action)
@@ -45,6 +45,7 @@ function createWindow() {
     let win = new BrowserWindow({
         width: 700,
         height: 500,
+        darkTheme: true,
         webPreferences: {
             nodeIntegration: true,
         },
