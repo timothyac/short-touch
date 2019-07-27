@@ -3,7 +3,8 @@ const { app, BrowserWindow, TouchBar, ipcMain, shell } = require('electron')
 const { TouchBarLabel, TouchBarButton, TouchBarSpacer } = TouchBar
 
 const welcomeLabel = new TouchBarLabel({label: 'Welcome Tester'})
-const touchItems = [welcomeLabel]
+const smallSpacer = new TouchBarSpacer({ size: 'small' })
+const touchItems = [ welcomeLabel, smallSpacer]
 
 function createNewButton(newButtonObject){
 
@@ -27,6 +28,9 @@ function createNewButton(newButtonObject){
     const touchBar = new TouchBar({
         items: touchItems
       })
+
+    // kill the escape bar
+    touchBar.escapeItem = smallSpacer;
 
     // grab the current window
     const [win] = BrowserWindow.getAllWindows();
