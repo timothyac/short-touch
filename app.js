@@ -40,8 +40,9 @@ ipcMain.on('create-new-button-array', (e, list) => {
 function createWindow() {
     let win = new BrowserWindow({
         width: 700,
-        height: 500,
+        height: 485,
         darkTheme: true,
+        titleBarStyle: 'hiddenInset',
         webPreferences: {
             nodeIntegration: true,
         },
