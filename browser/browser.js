@@ -132,6 +132,15 @@ createButton.addEventListener('click', (e) => {
 // switch to create tab
 createTab.addEventListener('click', switchToCreatePage);
 
+// sswitch to edit tab
+editTab.addEventListener('click', () => {
+    const element = existingButtons[0];
+    if(element) {
+        switchToEditPage(element);
+        element.classList.add('active');
+    };
+})
+
 // listen for a click on the update button
 updateButton.addEventListener('click', (e) => {
     e.preventDefault();
