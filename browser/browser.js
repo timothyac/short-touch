@@ -96,12 +96,29 @@ function switchToCreatePage() {
     removeActiveClass()
 }
 
+function isStorageFull() {
+    const currentList = returnLocalStorage();
+
+    // touch bar length can't be more than 6
+    if(currentList.length < 6 ) {
+        return true
+    } else {
+        return false
+    }
+}
+
 // when the page first loads, set the list
 window.onload = setList;
 
 // listen for a click to create a new button
 createButton.addEventListener('click', (e) => {
     e.preventDefault();
+
+    const notFull = isStorageFull()
+
+    if(!notFull) {
+        return alert("Can't have more than 6 buttons!")
+    }
 
     // create a new object
     const newTouchButton = {
