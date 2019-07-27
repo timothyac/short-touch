@@ -2,10 +2,14 @@
 
 > Application to easily generate short cut buttons on MacBooks with the touch bar.
 
-Short Touch allows you to have 6 short cuts that are somewaht easily accessible at the click of a button.
+Short Touch allows you to have 6 short cuts that are somewhat easily accessible at the click of a button.
 
 <a href="https://github.com/SunstroUS/short-touch/releases">
 	<img src="https://i.imgur.com/xtkhyiv.png" width="846">
+</a>
+
+<a href="https://github.com/SunstroUS/short-touch/releases">
+	<img src="https://i.imgur.com/phhQq0V.png" width="846">
 </a>
 
 ## Install
