@@ -23,21 +23,19 @@ const returnLocalStorage = () => {
 function setList() {
     const currentList = returnLocalStorage();
 
-    console.log(currentList)
     // if empty then skip setting the list
     if(currentList === []) return;
 
     // run a loop through the arry
     currentList.forEach(button => {
-        console.log("Button: ", button)
         let circle = `<div class="circle" style="background: ${button.color}"></div>`;
         let title = `<p>${button.name}</p>`;
 
-        let buttonItem = `<div class="button-item active">${circle} ${title}</div>`;
+        let buttonItem = `<div class="button-item">${circle} ${title}</div>`;
         existingContainer.innerHTML += buttonItem;
     });
 
-    ipcRenderer.send('create-new-button-array', (e, currentList));
+    ipcRenderer.send('create-new-button-array', (currentList));
 }
 
 // when the page first loads, set the list
