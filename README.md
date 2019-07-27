@@ -34,3 +34,8 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
 ## Dev
 
 Built with [Electron](https://electronjs.org).
+
+## Inspired by
+
+-[Caprine](https://github.com/sindresorhus/caprine) by [Sindre Sorhus](https://github.com/sindresorhus)
+-[Inboxer](https://github.com/denysdovhan/inboxer) by [Denys Dovhan](https://github.com/denysdovhan)

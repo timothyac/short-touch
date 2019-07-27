@@ -5,7 +5,10 @@
   "description": "Application to easily generate short cut buttons on MacBooks with the touch bar.",
   "main": "app.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --macos",
+    "postinstall": "electron-builder install-app-deps"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,36 @@
   "bugs": {
     "url": "https://github.com/SunstroUS/short-touch/issues"
   },
-  "homepage": "https://github.com/SunstroUS/short-touch#readme"
+  "homepage": "https://github.com/SunstroUS/short-touch#readme",
+  "devDependencies": {
+    "electron": "5.0.0",
+    "electron-builder": "^21.1.5"
+  },
+  "electronVersion": "version",
+  "build": {
+    "files": [
+      "**/*",
+      "!media${/*}"
+    ],
+    "appId": "com.sunstrous.short-touch",
+    "productName": "Short Touch",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "dmg": {
+      "iconSize": 160,
+      "contents": [
+        {
+          "x": 180,
+          "y": 170
+        },
+        {
+          "x": 480,
+          "y": 170,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
 }
