@@ -60,13 +60,15 @@ button {
 
 button:focus {
     outline:0;
-    background: rgb(52,88,255);
-    background: linear-gradient(0deg, rgba(52,88,255,1) 29%, rgba(52,116,255,1) 100%);
 }
 
 .active {
     background: rgb(52,88,255) !important;
     background: linear-gradient(0deg, rgba(52,88,255,1) 29%, rgba(52,116,255,1) 100%) !important;
+}
+
+.hidden {
+    display: none;
 }
 
 .program-grid {
@@ -91,8 +93,16 @@ button:focus {
     width: 100%
 }
 
+.button-item:hover {
+    cursor: pointer;
+}
+
 .button-item p {
     margin: 8px 7px 0 7px
+}
+
+.button-item p:hover {
+    cursor: text;
 }
 
 .circle {

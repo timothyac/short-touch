@@ -10,25 +10,30 @@
 <body>
     <div class="program-grid">
         <div class="existing" id="existing">
-            <div class="button-item active">
-                <div class="circle" style="background: #7851a9;"></div>
-                <p>Twitter</p>
-            </div>
         </div>
         <div class="create">
             <ul class="tab-container">
-                <li><button class="tab-create">Create</button></li>
-                <li><button class="tab-edit">Edit</button></li>
+                <li><button class="tab-create active" id="tab-create">Create</button></li>
+                <li><button class="tab-edit" id="tab-edit">Edit</button></li>
             </ul>
-            <form>
+            <form id="create-form">
                 <h2>New Button</h2>
                 <label for="btn-name">Name</label>
                 <input type="text" name="btn-name" id="btn-name">
                 <label for="btn-action">Action</label>
                 <input type="text" name="btn-action" id="btn-action">
-                <input type="color" value="#e0ffee" id="color-picker">
+                <input type="color" value="#f4f4f4" id="color-picker">
                 <button id="create">Create</button>
             </form>
+            <form id="edit-form" class="hidden">
+                    <h2>Edit Button</h2>
+                    <label for="btn-name">Name</label>
+                    <input type="text" name="btn-name" id="btn-name-edit" disabled>
+                    <label for="btn-action">Action</label>
+                    <input type="text" name="btn-action" id="btn-action-edit">
+                    <input type="color" value="#f4f4f4" id="color-picker-edit">
+                    <button id="update">Update</button>
+                </form>
         </div>
     </div>
     <script src="./browser.js"></script>
