@@ -1,4 +1,5 @@
 const { app, BrowserWindow, TouchBar, ipcMain, shell } = require('electron')
+const applicationInfo = require('./package.json')
 
 const { TouchBarLabel, TouchBarButton, TouchBarSpacer } = TouchBar
 
@@ -50,5 +51,12 @@ function createWindow() {
 
     win.loadFile('browser/index.html')
 }
+
+app.setAboutPanelOptions({
+    applicationName: "Short Touch",
+    applicationVersion: applicationInfo.version,
+    version: "123",
+    copyright: "Copyright © 2019 Sunstrous"
+})
 
 app.on('ready', createWindow)
