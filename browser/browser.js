@@ -2,6 +2,7 @@ const { ipcRenderer } = require('electron');
 
 const createButton = document.getElementById('create');
 const updateButton = document.getElementById('update');
+const deleteButton = document.getElementById('delete');
 const nameInput = document.getElementById('btn-name');
 const actionInput = document.getElementById('btn-action');
 const colorPicker = document.getElementById('color-picker');
@@ -179,6 +180,31 @@ updateButton.addEventListener('click', (e) => {
             return button
         }
     })
+
+    // update the localStorage
+    localStorage.setItem("buttons", JSON.stringify(updatedList));
+
+    // reset values
+    nameEditInput.value = '';
+    actionEditInput.value = '';
+    colorPickerEdit.value = '#f4f4f4';
+
+    // remove existing dom elements
+    while (existingContainer.firstChild) existingContainer.removeChild(existingContainer.firstChild);
+
+    // refresh existing container and switch to create;
+    setList();
+    switchToCreatePage();
+})
+
+// listen for a click on the delete button
+deleteButton.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    const currentList = returnLocalStorage();
+
+    // update the list with the edited values
+    const updatedList = currentList.filter((button) => button.name != nameEditInput.value)
 
     // update the localStorage
     localStorage.setItem("buttons", JSON.stringify(updatedList));
