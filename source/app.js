@@ -13,6 +13,7 @@ function createWindow() {
   let win = new BrowserWindow({
     width: 700,
     height: 485,
+    backgroundColor: "#474747",
     darkTheme: true,
     titleBarStyle: "hiddenInset",
     webPreferences: {
