@@ -1,8 +1,7 @@
-# Short Touch β
+# Short Touch β <img src="media/icon.png" width="40">
 
 > Application to easily generate short cut buttons on MacBooks with the touch bar.
 
-Short Touch allows you to have 6 short cuts that are somewhat easily accessible at the click of a button.
 
 <a href="https://github.com/SunstroUS/short-touch/releases">
 	<img src="media/name-label-update.png" width="846">
@@ -11,6 +10,10 @@ Short Touch allows you to have 6 short cuts that are somewhat easily accessible 
 <a href="https://github.com/SunstroUS/short-touch/releases">
 	<img src="media/name-label-update-rp.JPG" width="846">
 </a>
+
+## What can it do
+
+Short Touch allows you to have 6 shortcuts on your touch bar that are somewhat easily accessible at the click of a button. Unfortunately, there are some limitations of the the touch bar api, such as the fact that it's only present whilethe app is open. It acts more of a quick launcher rather than a permanent solution for your TB. Also the shortcuts right now only support URLs to open in safari, working on getting it to open apps and links inside other browsers (Chrome).
 
 ## Install
 
