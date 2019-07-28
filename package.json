@@ -3,7 +3,7 @@
   "applicationName": "Short Touch",
   "version": "1.1.0",
   "description": "Application to easily generate short cut buttons on MacBooks with the touch bar.",
-  "main": "app.js",
+  "main": "source/app.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",

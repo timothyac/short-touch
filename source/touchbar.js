@@ -1,12 +1,4 @@
-const {
-  app,
-  BrowserWindow,
-  TouchBar,
-  ipcMain,
-  shell,
-  Menu
-} = require("electron");
-const applicationInfo = require("./package.json");
+const { BrowserWindow, TouchBar, ipcMain, shell } = require("electron");
 
 const { TouchBarLabel, TouchBarButton, TouchBarSpacer } = TouchBar;
 
@@ -49,29 +41,6 @@ function createTheTouchbar(listOfButtons) {
   // create the touchbar
   win.setTouchBar(touchBar);
 }
-
-function createWindow() {
-  let win = new BrowserWindow({
-    width: 700,
-    height: 485,
-    darkTheme: true,
-    titleBarStyle: "hiddenInset",
-    webPreferences: {
-      nodeIntegration: true
-    }
-  });
-
-  win.loadFile("browser/index.html");
-}
-
-app.setAboutPanelOptions({
-  applicationName: "Short Touch",
-  applicationVersion: applicationInfo.version,
-  version: "beta",
-  copyright: "Copyright © 2019 Sunstrous"
-});
-
-app.on("ready", createWindow);
 
 // catch event from browser.js
 ipcMain.on("create-new-button-array", (e, list) => {
