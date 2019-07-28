@@ -54,7 +54,7 @@ function setList() {
 
     if (type == "button") {
       let circle = `<div class="circle" style="background: ${color}"></div>`;
-      let title = `<p>${name}</p>`;
+      let title = `<p>${name.length > 8 ? name.slice(0, 8) + "..." : name}</p>`;
 
       let buttonItem = `<div name="${name}" action="${action}" color="${color}" class="button-item">${circle} ${title}</div>`;
       buttonsContainer.innerHTML += buttonItem;
@@ -176,6 +176,9 @@ createButton.addEventListener("click", e => {
     shell.beep();
     return alert("Can't have more than 6 buttons!");
   }
+
+  if (nameInput.value == "") return alert("Name can't be empty");
+  if (actionInput.value == "") return alert("Action can't be empty");
 
   // create a new object
   const newTouchButton = {
