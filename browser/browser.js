@@ -15,6 +15,8 @@ const labelNameInput = document.getElementById('btn-name-edit-label');
 
 // existing container
 const existingContainer = document.getElementById('existing');
+const labelContainer = document.getElementById('label-container');
+const buttonsContainer = document.getElementById('buttons-container');
 const existingButtons = document.getElementsByClassName('button-item');
 
 // tabs
@@ -55,12 +57,13 @@ function setList() {
             let title = `<p>${name}</p>`;
     
             let buttonItem = `<div name="${name}" action="${action}" color="${color}" class="button-item">${circle} ${title}</div>`;
-            existingContainer.innerHTML += buttonItem;
+            buttonsContainer.innerHTML += buttonItem;
         } else if (type == "label") {
+            let circle = `<div class="circle" style="background: ${color}"></div>`;
             let title = `<p>${name}</p>`;
     
-            let buttonItem = `<div type="label" name="${name}" action="//" color="#353535" class="button-item name-label">${title}</div>`;
-            existingContainer.innerHTML += buttonItem;
+            let buttonItem = `<div type="label" name="${name}" action="//" color="#353535" class="button-item name-label">${circle} ${title}</div>`;
+            labelContainer.innerHTML += buttonItem;
         }
     });
 
@@ -147,6 +150,17 @@ function isStorageFull() {
     }
 }
 
+function cleanExistingContainer() {
+    // remove existing dom elements
+    while (labelContainer.firstChild) labelContainer.removeChild(labelContainer.firstChild);
+    while (buttonsContainer.firstChild) buttonsContainer.removeChild(buttonsContainer.firstChild);
+
+    const userText = `<p class="container-text">user</p>`
+    const buttonText = `<p class="container-text">button</p>`
+    labelContainer.innerHTML += userText
+    buttonsContainer.innerHTML += buttonText
+}
+
 // when the page first loads, set the list
 window.onload = setList;
 
@@ -180,9 +194,7 @@ createButton.addEventListener('click', (e) => {
     actionInput.value = '';
     colorPicker.value = '#f4f4f4';
 
-
-    // remove existing dom elements
-    while (existingContainer.firstChild) existingContainer.removeChild(existingContainer.firstChild);
+    cleanExistingContainer()
 
     // refresh existing container
     setList();
@@ -233,8 +245,7 @@ updateButton.addEventListener('click', (e) => {
     actionEditInput.value = '';
     colorPickerEdit.value = '#f4f4f4';
 
-    // remove existing dom elements
-    while (existingContainer.firstChild) existingContainer.removeChild(existingContainer.firstChild);
+    cleanExistingContainer()
 
     // refresh existing container and switch to create;
     setList();
@@ -268,8 +279,7 @@ updateLabelButton.addEventListener('click', (e) => {
     // reset values
     labelNameInput.value = '';
 
-    // remove existing dom elements
-    while (existingContainer.firstChild) existingContainer.removeChild(existingContainer.firstChild);
+    cleanExistingContainer()
 
     // refresh existing container and switch to create;
     setList();
@@ -293,8 +303,7 @@ deleteButton.addEventListener('click', (e) => {
     actionEditInput.value = '';
     colorPickerEdit.value = '#f4f4f4';
 
-    // remove existing dom elements
-    while (existingContainer.firstChild) existingContainer.removeChild(existingContainer.firstChild);
+    cleanExistingContainer()
 
     // refresh existing container and switch to create;
     setList();

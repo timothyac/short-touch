@@ -123,6 +123,13 @@ button:active {
     width: 160px
 }
 
+.container-text {
+    font-size: 13px;
+    color: gray;
+    margin: 0;
+    padding: 3px 7.5px;
+}
+
 .button-item {
     display: flex;
     height: 37px;
@@ -139,6 +146,10 @@ button:active {
 
 .button-item p:hover {
     cursor: text;
+}
+
+#label-container {
+    border-bottom: 1px solid grey
 }
 
 .circle {

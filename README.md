@@ -5,11 +5,11 @@
 Short Touch allows you to have 6 short cuts that are somewhat easily accessible at the click of a button.
 
 <a href="https://github.com/SunstroUS/short-touch/releases">
-	<img src="https://i.imgur.com/nyvnoy2.png" width="846">
+	<img src="media/name-label-update.png" width="846">
 </a>
 
 <a href="https://github.com/SunstroUS/short-touch/releases">
-	<img src="https://i.imgur.com/phhQq0V.png" width="846">
+	<img src="media/name-label-update-rp.JPG" width="846">
 </a>
 
 ## Install
