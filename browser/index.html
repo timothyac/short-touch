@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./browser.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./browser.css" />
     <title>Short Touch</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="title-bar">
-        <p>Short Touch</p>
+      <p>Short Touch</p>
     </div>
     <div class="program-grid">
-        <div class="existing" id="existing">
-            <div id="label-container">
-                <p class="container-text">user</p>
-            </div>
-            <div id="buttons-container">
-                <p class="container-text">button</p>
-            </div>
+      <div class="existing" id="existing">
+        <div id="label-container">
+          <p class="container-text">user</p>
         </div>
-        <div class="create">
-            <ul class="tab-container">
-                <li><button class="tab-create active" id="tab-create">Create</button></li>
-                <li><button class="tab-edit" id="tab-edit">Edit</button></li>
-            </ul>
-            <form id="create-form">
-                <h2>New Button</h2>
-                <label for="btn-name">Name</label>
-                <input type="text" name="btn-name" id="btn-name">
-                <label for="btn-action">Action</label>
-                <input type="text" name="btn-action" id="btn-action">
-                <input type="color" value="#f4f4f4" id="color-picker">
-                <button id="create">Create</button>
-            </form>
-            <form id="edit-form" class="hidden">
-                <h2>Edit Button</h2>
-                <label for="btn-name">Name</label>
-                <input type="text" name="btn-name" id="btn-name-edit" disabled>
-                <label for="btn-action">Action</label>
-                <input type="text" name="btn-action" id="btn-action-edit">
-                <input type="color" value="#f4f4f4" id="color-picker-edit">
-                <div class="update-form-buttons">
-                    <button id="update">Update</button>
-                    <button id="delete">Delete</button>
-                </div>
-            </form>
-            <form id="label-form" class="hidden">
-                <h2>Edit Name</h2>
-                <label for="btn-name">Name</label>
-                <input type="text" name="btn-name" id="btn-name-edit-label">
-                <div class="update-form-buttons">
-                    <button id="update-label">Update</button>
-                </div>
-            </form>
+        <div id="buttons-container">
+          <p class="container-text">button</p>
         </div>
+      </div>
+      <div class="create">
+        <ul class="tab-container">
+          <li>
+            <button class="tab-create active" id="tab-create">Create</button>
+          </li>
+          <li><button class="tab-edit" id="tab-edit">Edit</button></li>
+        </ul>
+        <form id="create-form">
+          <h2>New Button</h2>
+          <label for="btn-name">Name</label>
+          <input type="text" name="btn-name" id="btn-name" />
+          <label for="btn-action">Action</label>
+          <input type="text" name="btn-action" id="btn-action" />
+          <input type="color" value="#f4f4f4" id="color-picker" />
+          <button id="create">Create</button>
+        </form>
+        <form id="edit-form" class="hidden">
+          <h2>Edit Button</h2>
+          <label for="btn-name">Name</label>
+          <input type="text" name="btn-name" id="btn-name-edit" disabled />
+          <label for="btn-action">Action</label>
+          <input type="text" name="btn-action" id="btn-action-edit" />
+          <input type="color" value="#f4f4f4" id="color-picker-edit" />
+          <div class="update-form-buttons">
+            <button id="update">Update</button>
+            <button id="delete">Delete</button>
+          </div>
+        </form>
+        <form id="label-form" class="hidden">
+          <h2>Edit Name</h2>
+          <label for="btn-name">Name</label>
+          <input type="text" name="btn-name" id="btn-name-edit-label" />
+          <div class="update-form-buttons">
+            <button id="update-label">Update</button>
+          </div>
+        </form>
+      </div>
     </div>
     <script src="./browser.js"></script>
-</body>
+  </body>
 </html>

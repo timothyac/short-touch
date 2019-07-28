@@ -1,205 +1,206 @@
 body {
-    margin: 0;
-    background: #474747;
-    color: #DFDFDF;
-	font-family:
-		-apple-system,
-		BlinkMacSystemFont,
-		'Helvetica Neue',
-		sans-serif,
-		'Apple Color Emoji',
-		'Segoe UI Emoji',
-		'Segoe UI Symbol' !important;
-	text-rendering: optimizeLegibility !important;
-	font-feature-settings: 'liga', 'clig', 'kern';
+  margin: 0;
+  background: #474747;
+  color: #dfdfdf;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  text-rendering: optimizeLegibility !important;
+  font-feature-settings: "liga", "clig", "kern";
 }
 
 form {
-    display: grid;
-    margin-left: 6rem;
+  display: grid;
+  margin-left: 6rem;
 }
 
-label{
-    margin: 10px 0 0 0;
+label {
+  margin: 10px 0 0 0;
 }
 
 input {
-    margin: 5px 0;
-    background: #7A7A7A;
-    border: 2px solid #7A7A7A;
-    border-radius: 3px;
-    height: 14px;
-    max-width: 300px;
-    color: #DFDFDF;
-
+  margin: 5px 0;
+  background: #7a7a7a;
+  border: 2px solid #7a7a7a;
+  border-radius: 3px;
+  height: 14px;
+  max-width: 300px;
+  color: #dfdfdf;
 }
 
 input:focus {
-    outline:0;
-    color: #DFDFDF;
-    font-weight: 500;
-
+  outline: 0;
+  color: #dfdfdf;
+  font-weight: 500;
 }
 
-
-
 input[type="color"] {
-    padding: 10px;
-    width: 200px;
-    height: 30px;
-    cursor: pointer;
-    margin: 20px 0;
+  padding: 10px;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  margin: 20px 0;
 }
 
 button {
-    background: #7A7A7A;
-    width: 72px;
-    border: none;
-    border-radius: 3px;
-    padding: 2px 15px;
-    box-shadow: none;
-    color: #DFDFDF;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 500
+  background: #7a7a7a;
+  width: 72px;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 15px;
+  box-shadow: none;
+  color: #dfdfdf;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 button:focus {
-    outline:0;
+  outline: 0;
 }
 
 button:active {
-    background: rgb(52,88,255) !important;
-    background: linear-gradient(0deg, rgba(52,88,255,1) 29%, rgba(52,116,255,1) 100%) !important;
+  background: rgb(52, 88, 255) !important;
+  background: linear-gradient(
+    0deg,
+    rgba(52, 88, 255, 1) 29%,
+    rgba(52, 116, 255, 1) 100%
+  ) !important;
 }
 
 /* utility */
 
 .active {
-    background: rgb(52,88,255) !important;
-    background: linear-gradient(0deg, rgba(52,88,255,1) 29%, rgba(52,116,255,1) 100%) !important;
+  background: rgb(52, 88, 255) !important;
+  background: linear-gradient(
+    0deg,
+    rgba(52, 88, 255, 1) 29%,
+    rgba(52, 116, 255, 1) 100%
+  ) !important;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* traffic lights */
 
 .title-bar {
-    background: rgb(73,73,73);
-    background: linear-gradient(0deg, rgba(73,73,73,1) 0%, rgba(88,88,89,1) 100%);
-    border-bottom: 1px solid black;
-    color: #DFDFDF;
-    height: 40px;
-    -webkit-app-region: drag;
+  background: rgb(73, 73, 73);
+  background: linear-gradient(
+    0deg,
+    rgba(73, 73, 73, 1) 0%,
+    rgba(88, 88, 89, 1) 100%
+  );
+  border-bottom: 1px solid black;
+  color: #dfdfdf;
+  height: 40px;
+  -webkit-app-region: drag;
 }
 
 .title-bar p {
-    text-align: center;
-    font-size: 14px;
-    margin: 0 0 0 260px ;
-    padding-top: 10px;
-    width: 175px;
-    -webkit-user-select: none; 
+  text-align: center;
+  font-size: 14px;
+  margin: 0 0 0 260px;
+  padding-top: 10px;
+  width: 175px;
+  -webkit-user-select: none;
 }
 
 /* app */
 
 .program-grid {
-    margin: 30px 15px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 5px
+  margin: 30px 15px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 5px;
 }
 
 /* exiting container */
 
 .existing {
-    border: 1px solid grey;
-    border-radius: 3px;
-    background: #353535;
-    height: 360px;
-    width: 160px
+  border: 1px solid grey;
+  border-radius: 3px;
+  background: #353535;
+  height: 360px;
+  width: 160px;
 }
 
 .container-text {
-    font-size: 13px;
-    color: gray;
-    margin: 0;
-    padding: 3px 7.5px;
+  font-size: 13px;
+  color: gray;
+  margin: 0;
+  padding: 3px 7.5px;
 }
 
 .button-item {
-    display: flex;
-    height: 37px;
-    width: 100%
+  display: flex;
+  height: 37px;
+  width: 100%;
 }
 
 .button-item:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .button-item p {
-    margin: 8px 7px 0 7px
+  margin: 8px 7px 0 7px;
 }
 
 .button-item p:hover {
-    cursor: text;
+  cursor: text;
 }
 
 #label-container {
-    border-bottom: 1px solid grey
+  border-bottom: 1px solid grey;
 }
 
 .circle {
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 5px 5px 5px 10px;;
-
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px 5px 5px 10px;
 }
 
 /* create */
 
 .create {
-    border: .5px solid rgb(104, 104, 104);
-    border-radius: 3px;
-    background: #4D4D4D;
-    height: 360px
+  border: 0.5px solid rgb(104, 104, 104);
+  border-radius: 3px;
+  background: #4d4d4d;
+  height: 360px;
 }
 
 .tab-container {
-    position: relative;
-    top: -10px;
-    max-width: 160px;
-    height: 17px;
-    font-size: 0; /* Inline block elements gap - fix */
-    margin-left: 195px;
-    padding: 0;
+  position: relative;
+  top: -10px;
+  max-width: 160px;
+  height: 17px;
+  font-size: 0; /* Inline block elements gap - fix */
+  margin-left: 195px;
+  padding: 0;
 }
 
 .tab-container,
-.tab-container li{
+.tab-container li {
   display: inline-block;
   *display: inline;
   zoom: 1;
 }
 
 .tab-create {
-    border-radius: 2px 0px 0px 2px;
+  border-radius: 2px 0px 0px 2px;
 }
 
 .tab-edit {
-    border-radius: 0px 2px 2px 0px;
+  border-radius: 0px 2px 2px 0px;
 }
 
 .update-form-buttons {
-    display: flex
+  display: flex;
 }
 
 .update-form-buttons button {
-    width: 145px;
-    margin-right: 10px
+  width: 145px;
+  margin-right: 10px;
 }
