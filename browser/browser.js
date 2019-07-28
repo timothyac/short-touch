@@ -1,20 +1,30 @@
 const { ipcRenderer, shell } = require('electron');
 
+// form buttons and inputs
 const createButton = document.getElementById('create');
 const updateButton = document.getElementById('update');
 const deleteButton = document.getElementById('delete');
+const updateLabelButton = document.getElementById('update-label');
 const nameInput = document.getElementById('btn-name');
 const actionInput = document.getElementById('btn-action');
 const colorPicker = document.getElementById('color-picker');
 const nameEditInput = document.getElementById('btn-name-edit');
 const actionEditInput = document.getElementById('btn-action-edit');
 const colorPickerEdit = document.getElementById('color-picker-edit');
+const labelNameInput = document.getElementById('btn-name-edit-label');
+
+// existing container
 const existingContainer = document.getElementById('existing');
 const existingButtons = document.getElementsByClassName('button-item');
+
+// tabs
 const createTab = document.getElementById('tab-create');
 const editTab = document.getElementById('tab-edit');
+
+// form pages
 const createForm = document.getElementById('create-form');
 const editForm = document.getElementById('edit-form');
+const labelForm = document.getElementById('label-form');
 
 // return the local storage array
 const returnLocalStorage = () => {
@@ -36,15 +46,22 @@ function setList() {
     // if empty then skip setting the list
     if(currentList === []) return;
 
-    // run a loop through the arry
+    // run a loop through the array
     currentList.forEach(button => {
-        let {name, color, action} = button;
+        let {name, color, action, type} = button;
 
-        let circle = `<div class="circle" style="background: ${color}"></div>`;
-        let title = `<p>${name}</p>`;
-
-        let buttonItem = `<div name="${name}" action="${action}" color="${color}" class="button-item">${circle} ${title}</div>`;
-        existingContainer.innerHTML += buttonItem;
+        if(type == "button") {
+            let circle = `<div class="circle" style="background: ${color}"></div>`;
+            let title = `<p>${name}</p>`;
+    
+            let buttonItem = `<div name="${name}" action="${action}" color="${color}" class="button-item">${circle} ${title}</div>`;
+            existingContainer.innerHTML += buttonItem;
+        } else if (type == "label") {
+            let title = `<p>${name}</p>`;
+    
+            let buttonItem = `<div type="label" name="${name}" action="//" color="#353535" class="button-item name-label">${title}</div>`;
+            existingContainer.innerHTML += buttonItem;
+        }
     });
 
     ipcRenderer.send('create-new-button-array', (currentList));
@@ -54,6 +71,13 @@ function setList() {
         existingButtons[i].addEventListener('click', (e) => {
             // define the element
             let element = e.target
+
+            // make sure we can't click on inner elements
+            if(element.className == "button-item name-label") {
+                removeActiveClass()
+                element.classList.add('active');
+                switchToLabelPage(element)
+            }
 
             // make sure we can't click on inner elements
             if(element.className == "button-item") {
@@ -73,6 +97,8 @@ function removeActiveClass() {
         // check to see if it has the active class
         if(button.classList[1] == 'active') {
             button.classList.remove('active')
+        } else if (button.classList[2] == 'active') {
+            button.classList.remove('active')
         }
     }
 }
@@ -80,6 +106,7 @@ function removeActiveClass() {
 function switchToEditPage(button) {
     editTab.classList.add('active')
     createTab.classList.remove('active')
+    labelForm.classList.add('hidden')
     createForm.classList.add('hidden')
     editForm.classList.remove('hidden')
 
@@ -89,11 +116,23 @@ function switchToEditPage(button) {
     colorPickerEdit.value = button.getAttribute('color')
 }
 
+function switchToLabelPage(button) {
+    editTab.classList.add('active')
+    createTab.classList.remove('active')
+    createForm.classList.add('hidden')
+    editForm.classList.add('hidden')
+    labelForm.classList.remove('hidden')
+
+    // load the values into the inputs
+    labelNameInput.value = button.getAttribute('name')
+}
+
 function switchToCreatePage() {
     editTab.classList.remove('active')
     createTab.classList.add('active')
     createForm.classList.remove('hidden')
     editForm.classList.add('hidden')
+    labelForm.classList.add('hidden')
     removeActiveClass()
 }
 
@@ -101,7 +140,7 @@ function isStorageFull() {
     const currentList = returnLocalStorage();
 
     // touch bar length can't be more than 6
-    if(currentList.length < 6 ) {
+    if(currentList.length < 7 ) {
         return true
     } else {
         return false
@@ -126,7 +165,8 @@ createButton.addEventListener('click', (e) => {
     const newTouchButton = {
         name: nameInput.value,
         action: actionInput.value,
-        color: colorPicker.value
+        color: colorPicker.value,
+        type: "button"
     };
 
     // store it in an array combined with what's currently stored
@@ -151,9 +191,9 @@ createButton.addEventListener('click', (e) => {
 // switch to create tab
 createTab.addEventListener('click', switchToCreatePage);
 
-// sswitch to edit tab
+// switch to edit tab
 editTab.addEventListener('click', () => {
-    const element = existingButtons[0];
+    const element = existingButtons[1];
     if(element) {
         switchToEditPage(element);
         element.classList.add('active');
@@ -172,7 +212,8 @@ updateButton.addEventListener('click', (e) => {
     const updateTouchButton = {
         name: nameEditInput.value,
         action: actionEditInput.value,
-        color: colorPickerEdit.value
+        color: colorPickerEdit.value,
+        type: "button"
     };
 
     // update the list with the edited values
@@ -191,6 +232,41 @@ updateButton.addEventListener('click', (e) => {
     nameEditInput.value = '';
     actionEditInput.value = '';
     colorPickerEdit.value = '#f4f4f4';
+
+    // remove existing dom elements
+    while (existingContainer.firstChild) existingContainer.removeChild(existingContainer.firstChild);
+
+    // refresh existing container and switch to create;
+    setList();
+    switchToCreatePage();
+})
+
+// listen for a click on the update-label button
+updateLabelButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const currentList = returnLocalStorage();
+
+    // create a new object
+    const updateNameLabel = {
+        name: labelNameInput.value,
+        type: "label"
+    };
+
+    // update the list with the edited values
+    const updatedList = currentList.map((button) => {
+        if(button.type == "label") {
+            return updateNameLabel
+        } else {
+            return button
+        }
+    })
+
+    // update the localStorage
+    localStorage.setItem("buttons", JSON.stringify(updatedList));
+
+    // reset values
+    labelNameInput.value = '';
 
     // remove existing dom elements
     while (existingContainer.firstChild) existingContainer.removeChild(existingContainer.firstChild);
@@ -223,8 +299,4 @@ deleteButton.addEventListener('click', (e) => {
     // refresh existing container and switch to create;
     setList();
     switchToCreatePage();
-})
-
-ipcRenderer.on('create-new-buttons', (e) => {
-    console.log("Create a ntadsf")
 })

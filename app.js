@@ -3,28 +3,36 @@ const applicationInfo = require('./package.json')
 
 const { TouchBarLabel, TouchBarButton, TouchBarSpacer } = TouchBar
 
-const welcomeLabel = new TouchBarLabel({label: 'Welcome Tester'})
 const smallSpacer = new TouchBarSpacer({ size: 'small' })
-const touchItems = [ welcomeLabel, smallSpacer]
+const largeSpacer = new TouchBarSpacer({ size: 'large' })
 
 function createTheTouchbar(listOfButtons) {
     // map out each button
-    const touchBarButtons = listOfButtons.map(({name, color, action}) => {
-		return new TouchBarButton({
-			label: name,
-			backgroundColor: color,
-			click: () => {
-				// Use the shell to open links in the user browser
+
+    const filteredButtons = listOfButtons.filter((item) => item.type === "button")
+    const filteredLabel = listOfButtons.filter((item) => item.type === "label")
+
+    const touchBarButtons = filteredButtons.map(({name, color, action, type}) => {
+        return new TouchBarButton({
+            label: name,
+            backgroundColor: color,
+                click: () => {
+                // Use the shell to open links in the user browser
                 shell.openExternal(action)
-			}
-		});
-	});
+            }
+        });
+    });
+
+    // map out welcome label
+    const touchBarWelcomeLabel = filteredLabel.map(({name, type}) => {
+        return new TouchBarLabel({label: `Welcome ${name}`})
+    })
+    
+    const items = [smallSpacer, ...touchBarButtons]
+    const escapeItem = touchBarWelcomeLabel[0]
 
     // create the touchbar
-    const touchBar = new TouchBar({ items:touchBarButtons});
-
-    // kill the escape bar
-    touchBar.escapeItem = smallSpacer;
+    const touchBar = new TouchBar({ items, escapeItem });
     
 	// grab the current window
     const [win] = BrowserWindow.getAllWindows();
