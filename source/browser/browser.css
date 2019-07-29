@@ -10,7 +10,7 @@ body {
 
 form {
   display: grid;
-  margin-left: 6rem;
+  margin-left: 5rem;
 }
 
 label {
@@ -23,7 +23,7 @@ input {
   border: 2px solid #7a7a7a;
   border-radius: 3px;
   height: 14px;
-  max-width: 300px;
+  width: 144px;
   color: #dfdfdf;
 }
 
@@ -38,7 +38,12 @@ input[type="color"] {
   width: 200px;
   height: 30px;
   cursor: pointer;
-  margin: 20px 0;
+  margin: 10px 0 20px 0;
+}
+
+input[type="radio"] {
+  width: 25px;
+  margin-top: 6px;
 }
 
 button {
@@ -130,6 +135,8 @@ button:active {
   color: gray;
   margin: 0;
   padding: 3px 7.5px;
+  -webkit-user-select: none;
+  cursor: default;
 }
 
 .button-item {
@@ -203,4 +210,54 @@ button:active {
 .update-form-buttons button {
   width: 145px;
   margin-right: 10px;
+}
+
+.form-flex {
+  display: flex;
+}
+
+.form-flex div {
+  width: 75px;
+}
+
+.form-flex div p {
+  margin: 5px 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-grid div {
+  width: 75px;
+}
+
+.radio {
+  position: relative;
+  display: flex;
+  margin: 4px 0;
+  left: -63px;
+}
+
+.last {
+  left: -121px;
+}
+
+.form-grid div p {
+  margin: 5px 0;
+}
+
+.type-p {
+  margin: 10px 0 0 0 !important;
+}
+
+form h2 {
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+form label {
+  -webkit-user-select: none;
+  cursor: default;
 }

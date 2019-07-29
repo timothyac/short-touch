@@ -2,7 +2,6 @@
 
 > Application to easily generate short cut buttons on MacBooks with the touch bar.
 
-
 <a href="https://github.com/SunstroUS/short-touch/releases">
 	<img src="media/name-label-update.png" width="846">
 </a>
@@ -17,7 +16,7 @@ Short Touch allows you to have 6 shortcuts on your touch bar that are somewhat e
 
 ## Install
 
-*Currently this is still in beta/development and can only be installed by cloning the repo and manually installing it.
+\*Currently this is still in beta/development and can only be installed by cloning the repo and manually installing it.
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
 
@@ -32,7 +31,23 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
 
 - 6 custom short cuts
 - Native macOS appearance
+- Can open URLs (in safari)
+- Can open applications
 - Open Source and always free
+
+## Creating a new short touch
+
+#### For Applications
+
+You must start the input with '/Applications/'
+
+example: '/Applications/Google Chrome.app'
+
+#### For URLs
+
+You must start the input with 'http:// ' or 'https://'
+
+example: 'https://www.github.com/sunstrous'
 
 ## Dev
 
@@ -40,5 +55,4 @@ Built with [Electron](https://electronjs.org).
 
 ## Inspired by
 
--[Caprine](https://github.com/sindresorhus/caprine) by [Sindre Sorhus](https://github.com/sindresorhus)
--[Inboxer](https://github.com/denysdovhan/inboxer) by [Denys Dovhan](https://github.com/denysdovhan)
+-[Caprine](https://github.com/sindresorhus/caprine) by [Sindre Sorhus](https://github.com/sindresorhus) -[Inboxer](https://github.com/denysdovhan/inboxer) by [Denys Dovhan](https://github.com/denysdovhan)

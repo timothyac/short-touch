@@ -12,6 +12,14 @@ const nameEditInput = document.getElementById("btn-name-edit");
 const actionEditInput = document.getElementById("btn-action-edit");
 const colorPickerEdit = document.getElementById("color-picker-edit");
 const labelNameInput = document.getElementById("btn-name-edit-label");
+const actionTypeInputUrl = document.getElementById("btn-action-type-url");
+const actionTypeInputApp = document.getElementById("btn-action-type-app");
+const actionTypeEditInputApp = document.getElementById(
+  "btn-action-type-app-edit"
+);
+const actionTypeEditInputUrl = document.getElementById(
+  "btn-action-type-url-edit"
+);
 
 // existing container
 const existingContainer = document.getElementById("existing");
@@ -56,7 +64,11 @@ function setList() {
       let circle = `<div class="circle" style="background: ${color}"></div>`;
       let title = `<p>${name.length > 8 ? name.slice(0, 8) + "..." : name}</p>`;
 
-      let buttonItem = `<div name="${name}" action="${action}" color="${color}" class="button-item">${circle} ${title}</div>`;
+      let buttonItem = `<div name="${name}" action="${
+        action.value
+      }" action-type=${
+        action.type
+      } color="${color}" class="button-item">${circle} ${title}</div>`;
       buttonsContainer.innerHTML += buttonItem;
     } else if (type == "label") {
       let circle = `<div class="circle" style="background: ${color}"></div>`;
@@ -117,6 +129,12 @@ function switchToEditPage(button) {
   nameEditInput.value = button.getAttribute("name");
   actionEditInput.value = button.getAttribute("action");
   colorPickerEdit.value = button.getAttribute("color");
+
+  if (button.getAttribute("action-type") == "url") {
+    actionTypeEditInputUrl.checked = true;
+  } else {
+    actionTypeEditInputApp.checked = true;
+  }
 }
 
 function switchToLabelPage(button) {
@@ -183,7 +201,10 @@ createButton.addEventListener("click", e => {
   // create a new object
   const newTouchButton = {
     name: nameInput.value,
-    action: actionInput.value,
+    action: {
+      type: actionTypeInputApp.checked ? "app" : "url",
+      value: actionInput.value
+    },
     color: colorPicker.value,
     type: "button"
   };
@@ -228,7 +249,10 @@ updateButton.addEventListener("click", e => {
   // create a new object
   const updateTouchButton = {
     name: nameEditInput.value,
-    action: actionEditInput.value,
+    action: {
+      type: actionTypeEditInputApp ? "app" : "url",
+      value: actionEditInput.value
+    },
     color: colorPickerEdit.value,
     type: "button"
   };

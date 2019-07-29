@@ -27,31 +27,104 @@
           </li>
           <li><button class="tab-edit" id="tab-edit">Edit</button></li>
         </ul>
+        <!-- Create Form -->
         <form id="create-form">
           <h2>New Button</h2>
-          <label for="btn-name">Name</label>
-          <input type="text" name="btn-name" id="btn-name" />
-          <label for="btn-action">Action</label>
-          <input type="text" name="btn-action" id="btn-action" />
+          <div class="form-flex">
+            <div>
+              <p>Name:</p>
+            </div>
+            <input type="text" name="btn-name" id="btn-name" />
+          </div>
+          <div class="form-flex">
+            <div>
+              <p>Action:</p>
+            </div>
+            <input type="text" name="btn-action" id="btn-action" />
+          </div>
+          <div class="form-grid">
+            <div>
+              <p class="type-p">Type:</p>
+            </div>
+            <div class="radio">
+              <input
+                type="radio"
+                name="btn-action-type"
+                id="btn-action-type-url"
+                value="url"
+                checked
+              />
+              <p>Url</p>
+            </div>
+            <div class="radio last">
+              <input
+                type="radio"
+                name="btn-action-type"
+                id="btn-action-type-app"
+                value="app"
+              />
+              <p>App</p>
+            </div>
+          </div>
           <input type="color" value="#f4f4f4" id="color-picker" />
           <button id="create">Create</button>
         </form>
+        <!-- Edit Form -->
         <form id="edit-form" class="hidden">
           <h2>Edit Button</h2>
-          <label for="btn-name">Name</label>
-          <input type="text" name="btn-name" id="btn-name-edit" disabled />
-          <label for="btn-action">Action</label>
-          <input type="text" name="btn-action" id="btn-action-edit" />
+          <div class="form-flex">
+            <div>
+              <p>Name:</p>
+            </div>
+            <input type="text" name="btn-name" id="btn-name-edit" disabled />
+          </div>
+          <div class="form-flex">
+            <div>
+              <p>Action:</p>
+            </div>
+            <input type="text" name="btn-action" id="btn-action-edit" />
+          </div>
+          <div class="form-grid">
+            <div>
+              <p class="type-p">Type:</p>
+            </div>
+            <div class="radio">
+              <input
+                type="radio"
+                name="btn-action-type-edit"
+                id="btn-action-type-url-edit"
+                value="url"
+                checked
+              />
+              <p>Url</p>
+            </div>
+            <div class="radio last">
+              <input
+                type="radio"
+                name="btn-action-type-edit"
+                id="btn-action-type-app-edit"
+                value="app"
+              />
+              <p>App</p>
+            </div>
+          </div>
           <input type="color" value="#f4f4f4" id="color-picker-edit" />
           <div class="update-form-buttons">
             <button id="update">Update</button>
             <button id="delete">Delete</button>
           </div>
         </form>
+        <!-- Label Form -->
         <form id="label-form" class="hidden">
           <h2>Edit Name</h2>
-          <label for="btn-name">Name</label>
-          <input type="text" name="btn-name" id="btn-name-edit-label" />
+          <div class="form-flex">
+            <div>
+              <p>
+                Name:
+              </p>
+            </div>
+            <input type="text" name="btn-name" id="btn-name-edit-label" />
+          </div>
           <div class="update-form-buttons">
             <button id="update-label">Update</button>
           </div>

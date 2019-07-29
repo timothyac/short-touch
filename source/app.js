@@ -1,12 +1,4 @@
-const {
-  app,
-  BrowserWindow,
-  TouchBar,
-  ipcMain,
-  shell,
-  Menu
-} = require("electron");
-const applicationInfo = require("../package.json");
+const { app, BrowserWindow } = require("electron");
 require("./touchbar");
 
 function createWindow() {
@@ -16,6 +8,7 @@ function createWindow() {
     backgroundColor: "#474747",
     darkTheme: true,
     titleBarStyle: "hiddenInset",
+    resizable: app.isPackaged,
     webPreferences: {
       nodeIntegration: true
     }
@@ -25,8 +18,8 @@ function createWindow() {
 }
 
 app.setAboutPanelOptions({
-  applicationName: "Short Touch",
-  applicationVersion: applicationInfo.version,
+  applicationName: app.getName(),
+  applicationVersion: app.getVersion(),
   version: "beta",
   copyright: "Copyright © 2019 Sunstrous"
 });

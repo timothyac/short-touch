@@ -1,4 +1,10 @@
-const { BrowserWindow, TouchBar, ipcMain, shell } = require("electron");
+const {
+  BrowserWindow,
+  TouchBar,
+  ipcMain,
+  shell,
+  nativeImage
+} = require("electron");
 
 const { TouchBarLabel, TouchBarButton, TouchBarSpacer } = TouchBar;
 
@@ -11,21 +17,21 @@ function createTheTouchbar(listOfButtons) {
   const filteredButtons = listOfButtons.filter(item => item.type === "button");
   const filteredLabel = listOfButtons.filter(item => item.type === "label");
 
-  const touchBarButtons = filteredButtons.map(
-    ({ name, color, action, type }) => {
-      return new TouchBarButton({
-        label: name,
-        backgroundColor: color,
-        click: () => {
-          // Use the shell to open links in the user browser
-          shell.openExternal(action);
-        }
-      });
-    }
-  );
+  const touchBarButtons = filteredButtons.map(({ name, color, action }) => {
+    return new TouchBarButton({
+      label: name,
+      backgroundColor: color,
+      click: () => {
+        // Use the shell to open links in the user browser
+        if (action.type == "url") shell.openExternal(action.value);
+        // Or an application
+        if (action.type == "app") shell.openItem(action.value);
+      }
+    });
+  });
 
   // map out welcome label
-  const touchBarWelcomeLabel = filteredLabel.map(({ name, type }) => {
+  const touchBarWelcomeLabel = filteredLabel.map(({ name }) => {
     return new TouchBarLabel({ label: `Welcome ${name}` });
   });
 
