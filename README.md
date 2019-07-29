@@ -7,7 +7,7 @@
 </a>
 
 <a href="https://github.com/SunstroUS/short-touch/releases">
-	<img src="media/app-launch-update-rp.JPG" width="846">
+	<img src="media/app-launch-update-rp.jpg" width="846">
 </a>
 
 ## What can it do
