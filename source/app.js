@@ -10,7 +10,8 @@ function createWindow() {
     titleBarStyle: "hiddenInset",
     resizable: app.isPackaged,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      devTools: app.isPackaged
     }
   });
 
