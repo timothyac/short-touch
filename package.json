@@ -1,7 +1,7 @@
 {
   "name": "short-touch",
   "applicationName": "Short Touch",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Application to easily generate short cut buttons on MacBooks with the touch bar.",
   "main": "source/app.js",
   "scripts": {

@@ -12,7 +12,7 @@
 
 ## What can it do
 
-Short Touch allows you to have 6 shortcuts on your touch bar that are somewhat easily accessible at the click of a button. Unfortunately, there are some limitations of the the touch bar api, such as the fact that it's only present whilethe app is open. It acts more of a quick launcher rather than a permanent solution for your TB. Right now support URLs to open in safari, and opening apps. I would like to add support for opening links inside other browsers (Chrome, Firefox).
+Short Touch allows you to have 6 shortcuts on your touch bar that are somewhat easily accessible at the click of a button. Unfortunately, there are some limitations of the the touch bar api, such as the fact that it's only present while the app is open. It acts more of a quick launcher rather than a permanent solution for your TB. Right now it supports opening URLs (in Safari), and opening apps. I would like to add support for opening links inside other browsers (Chrome, Firefox).
 
 ## Install
 
