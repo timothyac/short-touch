@@ -250,7 +250,7 @@ updateButton.addEventListener("click", e => {
   const updateTouchButton = {
     name: nameEditInput.value,
     action: {
-      type: actionTypeEditInputApp ? "app" : "url",
+      type: actionTypeEditInputApp.checked ? "app" : "url",
       value: actionEditInput.value
     },
     color: colorPickerEdit.value,
