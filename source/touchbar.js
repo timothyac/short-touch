@@ -6,14 +6,18 @@ const {
   nativeImage
 } = require("electron");
 
-const { TouchBarLabel, TouchBarButton, TouchBarSpacer } = TouchBar;
+const {
+  TouchBarLabel,
+  TouchBarButton,
+  TouchBarSpacer,
+  TouchBarPopover
+} = TouchBar;
 
 const smallSpacer = new TouchBarSpacer({ size: "small" });
 const largeSpacer = new TouchBarSpacer({ size: "large" });
 
 function createTheTouchbar(listOfButtons) {
   // map out each button
-
   const filteredButtons = listOfButtons.filter(item => item.type === "button");
   const filteredLabel = listOfButtons.filter(item => item.type === "label");
 
@@ -37,6 +41,9 @@ function createTheTouchbar(listOfButtons) {
 
   const items = [smallSpacer, ...touchBarButtons];
   const escapeItem = touchBarWelcomeLabel[0];
+
+  // Might add functionality for this in future
+  // const popover = new TouchBarPopover({ label: "Popover", items });
 
   // create the touchbar
   const touchBar = new TouchBar({ items, escapeItem });

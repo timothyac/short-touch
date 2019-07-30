@@ -51,6 +51,7 @@ const returnLocalStorage = () => {
 
 // fill the existing container
 function setList() {
+  cleanExistingContainer();
   const currentList = returnLocalStorage();
 
   // if empty then skip setting the list
@@ -118,6 +119,10 @@ function removeActiveClass() {
   }
 }
 
+function switchTouchbarToCreateMode() {
+  ipcRenderer.send("create-new-button-mode");
+}
+
 function switchToEditPage(button) {
   editTab.classList.add("active");
   createTab.classList.remove("active");
@@ -155,6 +160,7 @@ function switchToCreatePage() {
   editForm.classList.add("hidden");
   labelForm.classList.add("hidden");
   removeActiveClass();
+  switchTouchbarToCreateMode();
 }
 
 function isStorageFull() {
@@ -220,8 +226,6 @@ createButton.addEventListener("click", e => {
   actionInput.value = "";
   colorPicker.value = "#f4f4f4";
 
-  cleanExistingContainer();
-
   // refresh existing container
   setList();
 });
@@ -274,8 +278,6 @@ updateButton.addEventListener("click", e => {
   actionEditInput.value = "";
   colorPickerEdit.value = "#f4f4f4";
 
-  cleanExistingContainer();
-
   // refresh existing container and switch to create;
   setList();
   switchToCreatePage();
@@ -308,8 +310,6 @@ updateLabelButton.addEventListener("click", e => {
   // reset values
   labelNameInput.value = "";
 
-  cleanExistingContainer();
-
   // refresh existing container and switch to create;
   setList();
   switchToCreatePage();
@@ -333,8 +333,6 @@ deleteButton.addEventListener("click", e => {
   nameEditInput.value = "";
   actionEditInput.value = "";
   colorPickerEdit.value = "#f4f4f4";
-
-  cleanExistingContainer();
 
   // refresh existing container and switch to create;
   setList();

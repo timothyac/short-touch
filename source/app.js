@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require("electron");
 require("./touchbar");
+require("./createButton");
 
 function createWindow() {
   let win = new BrowserWindow({
