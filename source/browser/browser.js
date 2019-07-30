@@ -124,6 +124,7 @@ function switchTouchbarToCreateMode() {
 }
 
 function switchToEditPage(button) {
+  setList();
   editTab.classList.add("active");
   createTab.classList.remove("active");
   labelForm.classList.add("hidden");
